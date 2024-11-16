@@ -9,9 +9,6 @@ target/
 .idea/compiler.xml
 .idea/libraries/
 .idea/
-.idea/material_theme_project_new.xml
-.idea/misc.xml
-.idea/vcs.xml
 *.iws
 *.iml
 *.ipr
