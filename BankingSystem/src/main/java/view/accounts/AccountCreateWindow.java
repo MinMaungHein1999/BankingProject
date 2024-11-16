@@ -2,6 +2,8 @@ package view.accounts;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AccountCreateWindow extends JFrame {
 
@@ -43,7 +45,20 @@ public class AccountCreateWindow extends JFrame {
         this.currencyCombo = new JComboBox<>();
 
         this.saveButton = new JButton("Save");
+        this.saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleSaveClick();
+            }
+        });
+
         this.clearButton = new JButton("Clear");
+        this.clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleClearClick();
+            }
+        });
 
         this.setSize(450, 350);
         this.setVisible(true);
@@ -98,6 +113,17 @@ public class AccountCreateWindow extends JFrame {
 
         constraints.gridy = 5;
         this.add(this.clearButton, constraints);
+    }
+
+
+    private void handleSaveClick(){}
+
+    private void handleClearClick(){
+        this.accountNumberInput.setText("");
+        this.accountTypeCombo.setSelectedIndex(0);
+        this.currencyCombo.setSelectedIndex(0);
+        this.amountInput.setText("");
+        this.customerIdInput.setText("");
     }
 
 
