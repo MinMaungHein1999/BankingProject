@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d256a1e9-572b-492d-9a97-c06b33a0e1ac" name="Changes" comment="" />
+    <list default="true" id="d256a1e9-572b-492d-9a97-c06b33a0e1ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/main/java/model/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/model/EmployeeStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/model/UsersRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/model/CustomerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/model/CustomerStatus.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +23,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "feature/bs-1005-mtk"
+    "git-widget-placeholder": "feature/bs-1007-mmh"
   }
 }]]></component>
   <component name="TaskManager">
