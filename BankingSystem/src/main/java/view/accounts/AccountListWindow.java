@@ -1,7 +1,5 @@
 package view.accounts;
 
-import test.accounts.AccountViewTest;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
