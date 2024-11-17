@@ -1,7 +1,6 @@
-package Branch;
+package view.branch;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -52,9 +51,9 @@ public class BranchingListingPage extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == updateBtn) {
-			new UpdateBranchPage();
+			new view.branch.UpdateBranchPage();
 		}else if (e.getSource() == createBtn) {
-			new CreateBranchPage();
+			new View.Branch.CreateBranchPage();
 		}
 		
 	}
