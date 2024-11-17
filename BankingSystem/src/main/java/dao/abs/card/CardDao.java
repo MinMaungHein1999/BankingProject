@@ -1,4 +1,11 @@
 package dao.abs.card;
 
-public class CardDao {
+import dao.AbstractDao;
+import model.Card;
+
+public abstract class CardDao extends AbstractDao<Card> {
+
+    public
+
+
 }
