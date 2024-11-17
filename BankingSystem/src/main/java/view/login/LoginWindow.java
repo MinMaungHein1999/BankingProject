@@ -5,20 +5,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginWindow extends JFrame implements ActionListener {
+public class LoginWindow extends JFrame {
     private JLabel branchlabel ,usernamelabel ,passwordlabel ;
     private JTextField usernameTF ;
     private JPasswordField passwordTF ;
+    private JButton signupBtn;
+
+    private JButton loginBtn;
     //private JComboBox<> branchComboBox;
-    private JButton signupBtn,loginBtn;
     private JFrame frame;
 
     public LoginWindow(){
         initializationComponents();
         initializationTableComponents();
-
-
-
     }
 
     private void initializationTableComponents(){
@@ -59,7 +58,6 @@ public class LoginWindow extends JFrame implements ActionListener {
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
     }
 
     private void initializationComponents(){
@@ -81,11 +79,13 @@ public class LoginWindow extends JFrame implements ActionListener {
     }
 
 
-
-
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
+    public JButton getLoginBtn() {
+        return loginBtn;
     }
+
+    public JButton getSignupBtn() {
+        return signupBtn;
+    }
+
+
 }
