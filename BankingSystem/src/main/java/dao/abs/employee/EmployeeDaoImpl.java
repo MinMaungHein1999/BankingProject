@@ -27,9 +27,9 @@ public class    EmployeeDaoImpl extends EmployeeDao {
            String department = resultset.getString("department");
            Date confirmedAt = resultset.getDate("confirmed_at");
            int users_role_id =  resultset.getInt("users_role_id");
-            resultset.getDate("branch_id");
-            resultset.getDate("created_by");
-            resultset.getDate("updated_by");
+            int branchID = resultset.getInt("branch_id");
+            int created_by = resultset.getInt("created_by");
+            int updated_by = resultset.getInt("updated_by");
 
 
         }catch(SQLException e) {
