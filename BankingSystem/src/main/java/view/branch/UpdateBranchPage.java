@@ -1,8 +1,7 @@
-package Branch;
+package view.branch;
 
-import java.awt.Button;
-import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -10,14 +9,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class CreateBranchPage extends JFrame {
+public class UpdateBranchPage extends JFrame{
 
-	private JButton createBtn, cancleBtn;
+	private JButton updateBtn, cancleBtn;
 	private JTextField userTextField, addressTextField, phTextField;
 	private JLabel userLabel, addressLabel, phLabel;
 	private JPanel panel;
 
-	public CreateBranchPage() {
+	public UpdateBranchPage() {
 		initializeComponent();
 		addToPanel();
 		this.setLocation(200, 200);
@@ -26,7 +25,7 @@ public class CreateBranchPage extends JFrame {
 	}
 
 	private void initializeComponent() {
-		this.setTitle(" Create Branch Page ");
+		this.setTitle(" Update Branch Page ");
 		this.setSize(400, 300);
 		this.setLayout(new BorderLayout());
 		this.panel = new JPanel();
@@ -41,7 +40,7 @@ public class CreateBranchPage extends JFrame {
 		this.phLabel = new JLabel("Phone Number :");
 		this.phTextField = new JTextField(15);
 
-		this.createBtn = new JButton("Create");
+		this.updateBtn = new JButton("Update");
 		this.cancleBtn = new JButton("Cancle");
 	}
 
@@ -52,8 +51,9 @@ public class CreateBranchPage extends JFrame {
 		this.panel.add(addressTextField);
 		this.panel.add(phLabel);
 		this.panel.add(phTextField);
-		this.panel.add(createBtn);
+		this.panel.add(updateBtn);
 		this.panel.add(cancleBtn);
 		this.add(panel,BorderLayout.CENTER);
 	}
 }
+
