@@ -13,3 +13,4 @@ public abstract class EmployeeDao extends AbstractDao<Employee> {
     public abstract void validateLoginToken(Employee employee);
     public abstract void setConfimedAt(Employee employee);
 }
+ 

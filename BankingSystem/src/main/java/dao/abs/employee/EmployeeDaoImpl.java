@@ -4,7 +4,7 @@ import model.Employee;
 
 import java.sql.*;
 
-public class EmployeeDaoImpl extends EmployeeDao {
+public class    EmployeeDaoImpl extends EmployeeDao {
     public EmployeeDaoImpl() {
     }
 
@@ -40,7 +40,8 @@ public class EmployeeDaoImpl extends EmployeeDao {
 
     @Override
     public String getInsertQuery() {
-        return "insert into "+this.getTableName()+" (username, email, password, phone_number, status, position, department, confirmed_at, users_role_id, branch_id, created_by, updated_by)" +
+        //insert into employees(name,email,password,phone_number,status,position,department,confirm_at,branch_id,users_role_id,created_by,updated_by)
+        return "insert into "+this.getTableName()+" (name, email, password, phone_number, status, position, department, confirmed_at, users_role_id, branch_id, created_by, updated_by)" +
                 " values (?,?,?,?,?,?,?,?,?,?,?,?)";
     }
 
