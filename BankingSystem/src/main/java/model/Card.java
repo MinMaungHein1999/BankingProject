@@ -7,7 +7,7 @@ public class Card {
     private String cardNumber;
     private int cardType;
     private Date cardExpireDate;
-    private int securityCode;
+    private String securityCode;
     private Account accountId;
 
     public int getId() {
@@ -42,11 +42,11 @@ public class Card {
         this.cardExpireDate = cardExpireDate;
     }
 
-    public int getSecurityCode() {
+    public String getSecurityCode() {
         return securityCode;
     }
 
-    public void setSecurityCode(int securityCode) {
+    public void setSecurityCode(String securityCode) {
         this.securityCode = securityCode;
     }
 
