@@ -1,7 +1,5 @@
 package dao.abs.card;
-
 import java.util.Date;
-import java.util.List;
 import dao.AbstractDao;
 import model.Card;
 

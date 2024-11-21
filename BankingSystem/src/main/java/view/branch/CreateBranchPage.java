@@ -1,9 +1,10 @@
-package View.Branch;
+package main.java.view.branch;
 
 import java.awt.Button;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,9 +29,10 @@ public class CreateBranchPage extends JFrame {
 	private void initializeComponent() {
 		this.setTitle(" Create Branch Page ");
 		this.setSize(400, 300);
-		this.setLayout(new BorderLayout());
+		this.setLayout(new BorderLayout(10,10));
 		this.panel = new JPanel();
-		this.panel.setLayout(new GridLayout(4, 2));
+		this.panel.setLayout(new GridLayout(4,2,10,10));
+		this.panel.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 
 		this.userLabel = new JLabel("Name :");
 		this.userTextField = new JTextField(15);

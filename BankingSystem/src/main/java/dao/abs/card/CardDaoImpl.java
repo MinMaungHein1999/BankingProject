@@ -1,4 +1,4 @@
-package dao.abs.card;
+package main.java.dao.abs.card;
 
 import dao.abs.Account.AccountDao;
 import dao.abs.Account.AccountDaoImpl;

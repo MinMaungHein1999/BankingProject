@@ -1,6 +1,6 @@
-package controller;
+package main.java.controller;
 
-import view.employee.EmployeeCreateWindow;
+import main.java.view.employee.EmployeeCreateWindow;
 
 public class EmployeeCreateController {
     private EmployeeCreateWindow window;
