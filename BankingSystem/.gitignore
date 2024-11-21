@@ -10,6 +10,7 @@ target/
 .idea/libraries/
 .idea/misc.xml
 .idea/
+/src/.idea/workspace.xml
 *.iws
 *.iml
 *.ipr
