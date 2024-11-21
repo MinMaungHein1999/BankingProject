@@ -8,11 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginWindow extends JFrame  {
+public class LoginWindow extends JFrame {
     private JLabel branchlabel ,usernamelabel ,passwordlabel ;
     private JTextField usernameTF ;
     private JPasswordField passwordTF ;
+    private JButton signupBtn;
+
+    private JButton loginBtn;
     //private JComboBox<> branchComboBox;
-    private JButton signupBtn,loginBtn;
     private JFrame frame;
 
     public LoginWindow(){
@@ -80,7 +83,6 @@ public class LoginWindow extends JFrame  {
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
     }
 
     private void initializationComponents(){
@@ -100,5 +102,15 @@ public class LoginWindow extends JFrame  {
         this.signupBtn = new JButton(" Sign Up ");
 
     }
+
+
+    public JButton getLoginBtn() {
+        return loginBtn;
+    }
+
+    public JButton getSignupBtn() {
+        return signupBtn;
+    }
+
 
 }
