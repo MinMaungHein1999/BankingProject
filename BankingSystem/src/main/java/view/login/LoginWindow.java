@@ -1,11 +1,13 @@
 package view.login;
 
+import view.customer.CustomerCreatePage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginWindow extends JFrame implements ActionListener {
+public class LoginWindow extends JFrame  {
     private JLabel branchlabel ,usernamelabel ,passwordlabel ;
     private JTextField usernameTF ;
     private JPasswordField passwordTF ;
@@ -17,17 +19,36 @@ public class LoginWindow extends JFrame implements ActionListener {
         initializationComponents();
         initializationTableComponents();
 
+        setupLoginBtnAction();
+        setupSignupBtnAction();
+    }
 
+    private void setupSignupBtnAction() {
+        this.signupBtn.addActionListener(e -> signupBtnAction());
+    }
+
+    private void signupBtnAction() {
+        // create employee form
+        new CustomerCreatePage();
+    }
+
+    private void setupLoginBtnAction() {
+        this.loginBtn.addActionListener(e -> loginBtnAction());
+    }
+
+    private void loginBtnAction() {
+        // home page
 
     }
 
     private void initializationTableComponents(){
+        this.setTitle("Login Window");
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.frame.setSize(350, 200);
         this.frame.setLayout(new GridBagLayout());
 
         GridBagConstraints constraints = new GridBagConstraints();
-        constraints.insets = new Insets(10, 10, 10, 10);
+        constraints.insets = new Insets(1, 1, 1, 1);
 
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -70,22 +91,14 @@ public class LoginWindow extends JFrame implements ActionListener {
         //this.branchComboBox = new JComboBox<>(String["Editor","Moderator",]);
 
         this.usernamelabel = new JLabel(" Username : ");
-        this.usernameTF = new JTextField(200);
+        this.usernameTF = new JTextField(15);
 
         this.passwordlabel = new JLabel(" Password : ");
-        this.passwordTF = new JPasswordField(255);
+        this.passwordTF = new JPasswordField(15);
 
         this.loginBtn = new JButton(" Login ");
         this.signupBtn = new JButton(" Sign Up ");
 
     }
 
-
-
-
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-    }
 }
