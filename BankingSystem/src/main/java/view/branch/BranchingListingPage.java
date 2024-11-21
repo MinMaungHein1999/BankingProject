@@ -1,19 +1,25 @@
-package view.branch;
+package main.java.view.branch;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class BranchingListingPage extends JFrame implements ActionListener{
 	
 	private JTable tabel;
+	private DefaultTableModel tabelModel;
+	private JScrollPane scrollPane;
 	private JButton selectBtn,updateBtn,createBtn;
-	
+	private String [] columns = {"Id","Name","Address","Phone Number"};
+		
 	public BranchingListingPage() {
 		initializeComponent();
 		addToPanel();
@@ -24,10 +30,11 @@ public class BranchingListingPage extends JFrame implements ActionListener{
 
 	private void addToPanel() {
 		JPanel tablePanel = new JPanel();
-		tablePanel.add(tabel);
+		tablePanel.add(scrollPane);
 		this.add(tablePanel,BorderLayout.CENTER);
 		
 		JPanel btnPanel = new JPanel();
+		btnPanel.setLayout(new GridLayout(1,3,5,5));
 		btnPanel.add(selectBtn);
 		btnPanel.add(createBtn);
 		btnPanel.add(updateBtn);
@@ -38,7 +45,9 @@ public class BranchingListingPage extends JFrame implements ActionListener{
 	private void initializeComponent() {
 		this.setTitle("Branching Listing Page");
 		this.setSize(500,400);
-		this.tabel = new JTable();
+		this.tabelModel = new DefaultTableModel(null,this.columns);
+		this.tabel = new JTable(this.tabelModel);
+		this.scrollPane = new JScrollPane(tabel);
 		this.selectBtn = new JButton("Select");
 		this.updateBtn = new JButton("Update");
 		this.createBtn = new JButton("Create");
@@ -51,9 +60,9 @@ public class BranchingListingPage extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == updateBtn) {
-			new view.branch.UpdateBranchPage();
+			new main.java.view.branch.UpdateBranchPage();
 		}else if (e.getSource() == createBtn) {
-			new View.Branch.CreateBranchPage();
+			new main.java.view.branch.CreateBranchPage();
 		}
 		
 	}

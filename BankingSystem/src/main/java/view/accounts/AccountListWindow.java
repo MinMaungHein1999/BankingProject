@@ -1,4 +1,4 @@
-package view.accounts;
+package main.java.view.accounts;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

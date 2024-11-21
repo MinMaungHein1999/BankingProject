@@ -1,11 +1,11 @@
-package dao.abs.card;
+package main.java.dao.abs.card;
 
-import dao.AbstractDao;
-import model.Card;
+import main.java.dao.AbstractDao;
+import main.java.model.Card;
 
 public abstract class CardDao extends AbstractDao<Card> {
 
-    public
+    
 
 
 }

@@ -1,6 +1,6 @@
-package dao.abs.employee;
+package main.java.dao.abs.employee;
 
-import model.Employee;
+import main.java.model.Employee;
 
 import java.sql.*;
 
