@@ -1,11 +1,18 @@
 package main.java.view.accounts;
 
+import dto.AccountDto;
+import exception.AccountCreateException;
+import model.AccountType;
+import service.AccountService;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AccountCreateWindow extends JFrame {
+
+    private AccountService accountService;
 
     private JLabel accountNumberLabel;
     private JLabel accountTypeLabel;
@@ -17,19 +24,22 @@ public class AccountCreateWindow extends JFrame {
     private JTextField amountInput;
     private JTextField customerIdInput;
 
-    private JComboBox<Object> accountTypeCombo;
-    private JComboBox<Object> currencyCombo;
+    private JComboBox<AccountType> accountTypeCombo;
+    private JComboBox<String> currencyCombo;
 
     private JButton saveButton;
     private JButton clearButton;
 
     public AccountCreateWindow(){
+        this.accountService = new AccountService();
         initializeComponents();
         layoutComponents();
     }
 
     private void initializeComponents(){
         this.setTitle("Create Account");
+
+        String[] currencyList = new String[]{"MMK", "THB", "USD", "JPY"};
 
         this.accountNumberLabel =  new JLabel("Account number:");
         this.accountTypeLabel = new JLabel("Account type:");
@@ -41,8 +51,8 @@ public class AccountCreateWindow extends JFrame {
         this.amountInput =new JTextField(20);
         this.customerIdInput = new JTextField(20);
 
-        this.accountTypeCombo = new JComboBox<>();
-        this.currencyCombo = new JComboBox<>();
+        this.accountTypeCombo = new JComboBox<>(AccountType.values());
+        this.currencyCombo = new JComboBox<>(currencyList);
 
         this.saveButton = new JButton("Save");
         this.saveButton.addActionListener(new ActionListener() {
@@ -116,7 +126,21 @@ public class AccountCreateWindow extends JFrame {
     }
 
 
-    private void handleSaveClick(){}
+    private void handleSaveClick()  {
+        try {
+            AccountDto accountDto = new AccountDto();
+            accountDto.setAccountType((AccountType) this.accountTypeCombo.getSelectedItem());
+            accountDto.setAccountNumber(this.accountNumberInput.getText());
+            accountDto.setCurrency((String) this.currencyCombo.getSelectedItem());
+            accountDto.setCustomerId(Integer.parseInt(this.customerIdInput.getText()));
+            accountDto.setAmount(Double.parseDouble(this.amountInput.getText()));
+            this.accountService.createAccount(accountDto);
+        }catch (AccountCreateException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }finally {
+            JOptionPane.showMessageDialog(this, "Account created successfully.");
+        }
+    }
 
     private void handleClearClick(){
         this.accountNumberInput.setText("");

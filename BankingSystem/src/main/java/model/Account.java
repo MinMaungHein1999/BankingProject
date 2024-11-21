@@ -3,7 +3,7 @@ package main.java.model;
 import java.sql.Date;
 
 public class Account {
-    private int id ;
+    private int id;
     private String accountNumber;
     private int accountType;
     private double balance;
@@ -13,6 +13,7 @@ public class Account {
     private Date updatedAt;
     private Employee CreatedBy;
     private Employee updatedBy;
+    private Customer customer;
 
     public int getId() {
         return id;
@@ -92,5 +93,13 @@ public class Account {
 
     public void setUpdatedBy(Employee updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

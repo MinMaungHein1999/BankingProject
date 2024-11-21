@@ -4,7 +4,7 @@ import java.sql.Time;
 
 public class AccountTransaction {
     private int id ;
-    private int type;
+    private TransactionType type;
     private double amount;
     private Time createdAt;
     private String description;
@@ -18,11 +18,11 @@ public class AccountTransaction {
         this.id = id;
     }
 
-    public int getType() {
+    public TransactionType getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(TransactionType type) {
         this.type = type;
     }
 
