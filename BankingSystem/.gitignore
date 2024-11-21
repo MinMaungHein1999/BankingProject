@@ -38,3 +38,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Properties files ###
+src/main/resources/application.properties
+
+### source code ###
+src/main/java/test/*

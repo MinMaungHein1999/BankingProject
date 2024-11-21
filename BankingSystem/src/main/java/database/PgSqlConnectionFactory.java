@@ -2,6 +2,7 @@ package database;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,9 +16,14 @@ public class PgSqlConnectionFactory implements  ConnectionFactory{
     private Connection connection;
 
     public PgSqlConnectionFactory(){
-        try {
-            Properties properties = new Properties();
-            properties.load(new FileInputStream("application.properties"));
+        String resourceName = "application.properties";
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        Properties properties = new Properties();
+        try (InputStream resourceStream = loader.getResourceAsStream(resourceName)){
+
+
+            properties.load(resourceStream);
+
             this.url = properties.getProperty("db.url");
             this.username = properties.getProperty("db.username");
             this.password = properties.getProperty("db.password");
@@ -29,13 +35,16 @@ public class PgSqlConnectionFactory implements  ConnectionFactory{
 
     @Override
     public Connection createConnection(){
+        System.out.println(this.url);
+        System.out.println(this.username);
+        System.out.println(this.password);
         try {
             this.connection = DriverManager.getConnection(this.url, this.username, this.password);
-
+            return  this.connection;
         }catch (SQLException e) {
             System.out.print(e.getMessage());
         }
-        return this.connection;
+        return null;
     }
 
     @Override

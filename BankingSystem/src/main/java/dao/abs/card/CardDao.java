@@ -5,7 +5,7 @@ import model.Card;
 
 public abstract class CardDao extends AbstractDao<Card> {
 
-    public
+    //public
 
 
 }
