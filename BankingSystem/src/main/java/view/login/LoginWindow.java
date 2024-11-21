@@ -8,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginWindow extends JFrame  {
-public class LoginWindow extends JFrame {
     private JLabel branchlabel ,usernamelabel ,passwordlabel ;
     private JTextField usernameTF ;
     private JPasswordField passwordTF ;

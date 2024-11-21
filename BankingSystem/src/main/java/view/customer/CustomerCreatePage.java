@@ -21,6 +21,14 @@ public class CustomerCreatePage extends JFrame{
     private JTextField emailTextField;
     private JTextField addressTextField;
 
+    public JButton getCancelBtn() {
+        return cancelBtn;
+    }
+
+    public JButton getCreateBtn() {
+        return createBtn;
+    }
+
     private JButton createBtn,cancelBtn;
 
     public CustomerCreatePage(){
@@ -93,22 +101,6 @@ public class CustomerCreatePage extends JFrame{
         this.createBtn = new JButton("Create");
         this.cancelBtn = new JButton("Cancel");
 
-        setupCreateBtnAction();
-        setupCancelBtnAction();
-    }
-    private void setupCreateBtnAction() {
-        this.createBtn.addActionListener(e -> createBtnAction());
     }
 
-    private void createBtnAction() {
-        JOptionPane.showMessageDialog(null,"Create sucessful!!!");
-    }
-
-    private void setupCancelBtnAction() {
-        this.cancelBtn.addActionListener(e -> cancelBtnAction());
-    }
-
-    private void cancelBtnAction() {
-        this.dispose();
-    }
 }
