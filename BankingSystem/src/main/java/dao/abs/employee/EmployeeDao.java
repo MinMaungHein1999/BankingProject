@@ -1,7 +1,8 @@
-package dao.abs.employee;
+package main.java.dao.abs.employee;
 
-import dao.AbstractDao;
-import model.Employee;
+import main.java.dao.AbstractDao;
+
+import main.java.model.Employee;
 
 public abstract class EmployeeDao extends AbstractDao<Employee> {
     public abstract Employee findByName(String name);

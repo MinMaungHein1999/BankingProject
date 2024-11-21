@@ -1,4 +1,4 @@
-package view.login;
+package main.java.view.login;
 
 import javax.swing.*;
 import java.awt.*;

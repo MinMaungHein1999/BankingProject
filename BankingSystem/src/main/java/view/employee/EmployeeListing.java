@@ -1,4 +1,4 @@
-package view.employee;
+package main.java.view.employee;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
